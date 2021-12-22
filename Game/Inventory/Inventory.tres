@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://Game/Items/ItemResource.gd" type="Script" id=1]
+[ext_resource path="res://Game/Inventory/Inventory.gd" type="Script" id=2]
+[ext_resource path="res://Game/Items/Potion.png" type="Texture" id=3]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 1 )
+name = "Potion"
+itemId = "pot2"
+texture = ExtResource( 3 )
+stackable = true
+type = "PotionItem"
+
+[resource]
+script = ExtResource( 2 )
+items = [ SubResource( 1 ), null, null, null, null, null, null, null, null ]

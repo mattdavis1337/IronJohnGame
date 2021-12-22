@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Game/Items/TallShield.png" type="Texture" id=1]
+[ext_resource path="res://Game/Items/TallShieldItem.gd" type="Script" id=2]
+
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "shield",
+"speed": 5.0
+} ]
+
+[sub_resource type="SegmentShape2D" id=3]
+a = Vector2( 5.34034, 7.21786 )
+b = Vector2( -4.28657, 19.6006 )
+
+[node name="TallShieldItem" type="KinematicBody2D"]
+input_pickable = true
+collision_layer = 1048575
+collision_mask = 1048575
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
+position = Vector2( -0.158569, -0.475719 )
+frames = SubResource( 2 )
+animation = "shield"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.355026, -14.3784 )
+shape = SubResource( 3 )
+disabled = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="SelectionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2( 0, 8 )
+polygon = PoolVector2Array( -6.23022, -16.5142, -6.31988, -3.47008, -2.28561, 0.0711117, 2.46585, 0.0711117, 6.09669, -3.60455, 6.00705, -16.559 )
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_Area2D_mouse_exited"]

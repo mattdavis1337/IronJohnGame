@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Game/Items/Potion.png" type="Texture" id=1]
+[ext_resource path="res://Game/Items/PotionItem.gd" type="Script" id=2]
+
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "sword",
+"speed": 5.0
+} ]
+
+[sub_resource type="SegmentShape2D" id=2]
+a = Vector2( 2.90012, -1.04562 )
+b = Vector2( -4.14888, 9.73221 )
+
+[node name="PotionItem" type="KinematicBody2D"]
+input_pickable = true
+collision_layer = 1048575
+collision_mask = 1048575
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
+position = Vector2( -0.311805, -0.884357 )
+frames = SubResource( 1 )
+animation = "sword"
+playing = true
+offset = Vector2( 0, -8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.355026, -14.3784 )
+shape = SubResource( 2 )
+disabled = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2( -0.0510826, 0.0510788 )
+polygon = PoolVector2Array( -6.0363, -9.90741, -6.13846, -1.83681, 6.325, -1.99005, 5.91636, -8.4261, 4.12857, -16.4456, -4.19743, -16.4967 )
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_Area2D_mouse_exited"]

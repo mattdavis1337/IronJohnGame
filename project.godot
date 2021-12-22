@@ -1,0 +1,291 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "",
+"class": "CreateAppInput",
+"language": "GDScript",
+"path": "res://addons/enjin/sdk/inputs/app/CreateAppInput.gd"
+}, {
+"base": "",
+"class": "CreateIdentityInput",
+"language": "GDScript",
+"path": "res://addons/enjin/sdk/inputs/identity/CreateIdentityInput.gd"
+}, {
+"base": "",
+"class": "CreateRequestInput",
+"language": "GDScript",
+"path": "res://addons/enjin/sdk/inputs/request/CreateRequestInput.gd"
+}, {
+"base": "",
+"class": "CreateUserInput",
+"language": "GDScript",
+"path": "res://addons/enjin/sdk/inputs/user/CreateUserInput.gd"
+}, {
+"base": "",
+"class": "DeleteAppInput",
+"language": "GDScript",
+"path": "res://addons/enjin/sdk/inputs/app/DeleteAppInput.gd"
+}, {
+"base": "",
+"class": "DeleteIdentityInput",
+"language": "GDScript",
+"path": "res://addons/enjin/sdk/inputs/identity/DeleteIdentityInput.gd"
+}, {
+"base": "",
+"class": "DeleteRequestInput",
+"language": "GDScript",
+"path": "res://addons/enjin/sdk/inputs/request/DeleteRequestInput.gd"
+}, {
+"base": "Reference",
+"class": "EnjinCallback",
+"language": "GDScript",
+"path": "res://addons/enjin/sdk/http/EnjinCallback.gd"
+}, {
+"base": "Reference",
+"class": "EnjinGraphqlResponse",
+"language": "GDScript",
+"path": "res://addons/enjin/sdk/graphql/EnjinGraphqlResponse.gd"
+}, {
+"base": "Reference",
+"class": "EnjinHosts",
+"language": "GDScript",
+"path": "res://addons/enjin/sdk/http/EnjinHosts.gd"
+}, {
+"base": "Reference",
+"class": "EnjinResponse",
+"language": "GDScript",
+"path": "res://addons/enjin/sdk/http/EnjinResponse.gd"
+}, {
+"base": "",
+"class": "GetAppInput",
+"language": "GDScript",
+"path": "res://addons/enjin/sdk/inputs/app/GetAppInput.gd"
+}, {
+"base": "",
+"class": "GetAppsInput",
+"language": "GDScript",
+"path": "res://addons/enjin/sdk/inputs/app/GetAppsInput.gd"
+}, {
+"base": "",
+"class": "GetBalancesInput",
+"language": "GDScript",
+"path": "res://addons/enjin/sdk/inputs/balance/GetBalancesInput.gd"
+}, {
+"base": "",
+"class": "GetIdentitiesInput",
+"language": "GDScript",
+"path": "res://addons/enjin/sdk/inputs/identity/GetIdentitiesInput.gd"
+}, {
+"base": "",
+"class": "GetIdentityInput",
+"language": "GDScript",
+"path": "res://addons/enjin/sdk/inputs/identity/GetIdentityInput.gd"
+}, {
+"base": "",
+"class": "GetPlatformInput",
+"language": "GDScript",
+"path": "res://addons/enjin/sdk/inputs/platform/GetPlatformInput.gd"
+}, {
+"base": "",
+"class": "GetRequestsInput",
+"language": "GDScript",
+"path": "res://addons/enjin/sdk/inputs/request/GetRequestsInput.gd"
+}, {
+"base": "",
+"class": "GetTokenEventsInput",
+"language": "GDScript",
+"path": "res://addons/enjin/sdk/inputs/token/event/GetTokenEventsInput.gd"
+}, {
+"base": "",
+"class": "GetTokenInput",
+"language": "GDScript",
+"path": "res://addons/enjin/sdk/inputs/token/GetTokenInput.gd"
+}, {
+"base": "",
+"class": "GetTokensInput",
+"language": "GDScript",
+"path": "res://addons/enjin/sdk/inputs/token/GetTokensInput.gd"
+}, {
+"base": "",
+"class": "GetUserInput",
+"language": "GDScript",
+"path": "res://addons/enjin/sdk/inputs/user/GetUserInput.gd"
+}, {
+"base": "",
+"class": "GetUsersInput",
+"language": "GDScript",
+"path": "res://addons/enjin/sdk/inputs/user/GetUsersInput.gd"
+}, {
+"base": "",
+"class": "GetWalletInput",
+"language": "GDScript",
+"path": "res://addons/enjin/sdk/inputs/wallet/GetWalletInput.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Item",
+"language": "GDScript",
+"path": "res://Game/Items/Item.gd"
+}, {
+"base": "Resource",
+"class": "ItemResource",
+"language": "GDScript",
+"path": "res://Game/Items/ItemResource.gd"
+}, {
+"base": "Reference",
+"class": "PacketIds",
+"language": "GDScript",
+"path": "res://addons/enjin/example/scripts/shared/PacketIds.gd"
+}, {
+"base": "Reference",
+"class": "Settings",
+"language": "GDScript",
+"path": "res://addons/enjin/example/scripts/shared/Settings.gd"
+}, {
+"base": "Reference",
+"class": "TrustedPlatformClient",
+"language": "GDScript",
+"path": "res://addons/enjin/sdk/TrustedPlatformClient.gd"
+}, {
+"base": "Object",
+"class": "TypeFormattingLogic",
+"language": "GDScript",
+"path": "res://addons/metadata_inspector/TypeFormattingLogic.gd"
+}, {
+"base": "",
+"class": "UnlinkAppInput",
+"language": "GDScript",
+"path": "res://addons/enjin/sdk/inputs/wallet/UnlinkAppInput.gd"
+}, {
+"base": "",
+"class": "UnlinkIdentityInput",
+"language": "GDScript",
+"path": "res://addons/enjin/sdk/inputs/wallet/UnlinkIdentityInput.gd"
+}, {
+"base": "",
+"class": "UpdateAppInput",
+"language": "GDScript",
+"path": "res://addons/enjin/sdk/inputs/app/UpdateAppInput.gd"
+}, {
+"base": "",
+"class": "UpdateIdentityInput",
+"language": "GDScript",
+"path": "res://addons/enjin/sdk/inputs/identity/UpdateIdentityInput.gd"
+}, {
+"base": "",
+"class": "UpdateRequestInput",
+"language": "GDScript",
+"path": "res://addons/enjin/sdk/inputs/request/UpdateRequestInput.gd"
+}, {
+"base": "Reference",
+"class": "WebSocketHelper",
+"language": "GDScript",
+"path": "res://addons/enjin/example/scripts/shared/WebSocketHelper.gd"
+} ]
+_global_script_class_icons={
+"CreateAppInput": "",
+"CreateIdentityInput": "",
+"CreateRequestInput": "",
+"CreateUserInput": "",
+"DeleteAppInput": "",
+"DeleteIdentityInput": "",
+"DeleteRequestInput": "",
+"EnjinCallback": "",
+"EnjinGraphqlResponse": "",
+"EnjinHosts": "",
+"EnjinResponse": "",
+"GetAppInput": "",
+"GetAppsInput": "",
+"GetBalancesInput": "",
+"GetIdentitiesInput": "",
+"GetIdentityInput": "",
+"GetPlatformInput": "",
+"GetRequestsInput": "",
+"GetTokenEventsInput": "",
+"GetTokenInput": "",
+"GetTokensInput": "",
+"GetUserInput": "",
+"GetUsersInput": "",
+"GetWalletInput": "",
+"Item": "",
+"ItemResource": "",
+"PacketIds": "",
+"Settings": "",
+"TrustedPlatformClient": "",
+"TypeFormattingLogic": "",
+"UnlinkAppInput": "",
+"UnlinkIdentityInput": "",
+"UpdateAppInput": "",
+"UpdateIdentityInput": "",
+"UpdateRequestInput": "",
+"WebSocketHelper": ""
+}
+
+[application]
+
+config/name="November Game Jam"
+run/main_scene="res://Game/Root.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+Global="*res://Global.gd"
+
+[display]
+
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "EXP-System-Dialog", "gut" )
+
+[input]
+
+ui_select={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":3,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+ui_left={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777231,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":14,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"unicode":0,"echo":false,"script":null)
+ ]
+}
+ui_right={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777233,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":15,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":70,"unicode":0,"echo":false,"script":null)
+ ]
+}
+ui_up={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777232,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":12,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":69,"unicode":0,"echo":false,"script":null)
+ ]
+}
+ui_down={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777234,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":13,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"unicode":0,"echo":false,"script":null)
+ ]
+}
+
+[rendering]
+
+quality/2d/use_pixel_snap=true
+environment/default_environment="res://default_env.tres"

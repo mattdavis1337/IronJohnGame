@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Game/Items/Sword.png" type="Texture" id=1]
+[ext_resource path="res://Game/Items/SwordItem.gd" type="Script" id=2]
+
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "sword",
+"speed": 5.0
+} ]
+
+[sub_resource type="SegmentShape2D" id=2]
+a = Vector2( -5.70969, -0.734581 )
+b = Vector2( 6.18083, 10.6605 )
+
+[node name="SwordItem" type="KinematicBody2D"]
+input_pickable = true
+collision_layer = 1048575
+collision_mask = 1048575
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
+position = Vector2( -0.158569, -0.475719 )
+frames = SubResource( 1 )
+animation = "sword"
+playing = true
+offset = Vector2( 0, -2 )
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite2"]
+position = Vector2( 0.158569, 0.475719 )
+
+[node name="SelectionPolygon2D" type="CollisionPolygon2D" parent="AnimatedSprite2/Area2D"]
+position = Vector2( 0, 6 )
+polygon = PoolVector2Array( -8.19046, -16.9281, -8.19046, -13.469, 1.5432, -3.81581, 6.53069, -0.115417, 7.81778, -2.44828, 4.84138, -6.87267, -5.13361, -16.7672 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -8 )
+shape = SubResource( 2 )
+disabled = true
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="input_event" from="AnimatedSprite2/Area2D" to="." method="_on_Area2D_input_event"]
+[connection signal="mouse_entered" from="AnimatedSprite2/Area2D" to="." method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="AnimatedSprite2/Area2D" to="." method="_on_Area2D_mouse_exited"]
